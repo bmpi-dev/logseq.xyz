@@ -1,0 +1,19 @@
+[Unit]
+Description=Logseq backend service
+After=syslog.target network.target
+
+[Service]
+SuccessExitStatus=143
+
+User=ubuntu
+Group=ubuntu
+
+Type=simple
+
+EnvironmentFile=/home/ubuntu/logseq/.env
+WorkingDirectory=/home/ubuntu/logseq
+ExecStart=java -Duser.timezone=UTC -jar /home/ubuntu/logseq/logseq.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target

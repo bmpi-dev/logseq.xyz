@@ -1,0 +1,208 @@
+diff --git a/public/index.html b/public/index.html
+index b2dcb71f..478a62f5 100644
+--- a/public/index.html
++++ b/public/index.html
+@@ -17,12 +17,12 @@
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:description">
+   <meta content="@logseq" name="twitter:site">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:title">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" name="twitter:image:src">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" name="twitter:image:src">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:image:alt">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:title">
+   <meta content="site" property="og:type">
+-  <meta content="https://logseq.com" property="og:url">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" property="og:image">
++  <meta content="https://logseq.xyz" property="og:url">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" property="og:image">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:description">
+   <title>Logseq: "A privacy-first platform for knowledge management and collaboration."</title>
+   <meta content="logseq" property="og:site_name">
+diff --git a/public/workspaces/index.html b/public/workspaces/index.html
+deleted file mode 100644
+index a0b8deea..00000000
+--- a/public/workspaces/index.html
++++ /dev/null
+@@ -1,15 +0,0 @@
+-<!DOCTYPE html>
+-<html>
+-  <head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1">
+-    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+-  </head>
+-  <body>
+-    <div id="app"></div>
+-    <!-- you might need to change the js path depending on your configuration -->
+-    <script src="/static/js/workspaces/main.js" type="text/javascript"></script>
+-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+-  </body>
+-</html>
+diff --git a/resources/electron.html b/resources/electron.html
+index 396f516a..11a6eb3f 100644
+--- a/resources/electron.html
++++ b/resources/electron.html
+@@ -17,12 +17,12 @@
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:description">
+   <meta content="@logseq" name="twitter:site">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:title">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" name="twitter:image:src">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" name="twitter:image:src">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:image:alt">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:title">
+   <meta content="site" property="og:type">
+-  <meta content="https://logseq.com" property="og:url">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" property="og:image">
++  <meta content="https://logseq.xyz" property="og:url">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" property="og:image">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:description">
+   <title>Logseq: "A privacy-first platform for knowledge management and collaboration."</title>
+   <meta content="logseq" property="og:site_name">
+diff --git a/resources/index.html b/resources/index.html
+index e8baffc0..d1090053 100644
+--- a/resources/index.html
++++ b/resources/index.html
+@@ -17,12 +17,12 @@
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:description">
+   <meta content="@logseq" name="twitter:site">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:title">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" name="twitter:image:src">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" name="twitter:image:src">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." name="twitter:image:alt">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:title">
+   <meta content="site" property="og:type">
+-  <meta content="https://logseq.com" property="og:url">
+-  <meta content="https://asset.logseq.com/static/img/logo.png" property="og:image">
++  <meta content="https://logseq.xyz" property="og:url">
++  <meta content="https://asset.logseq.xyz/static/img/logo.png" property="og:image">
+   <meta content="A privacy-first, open-source platform for knowledge management and collaboration." property="og:description">
+   <title>Logseq: A privacy-first platform for knowledge management and collaboration</title>
+   <meta content="logseq" property="og:site_name">
+diff --git a/shadow-cljs.edn b/shadow-cljs.edn
+index 3e0c6d2e..18e510a4 100644
+--- a/shadow-cljs.edn
++++ b/shadow-cljs.edn
+@@ -26,7 +26,7 @@
+                          :depends-on #{:main}}}
+         :output-dir       "./static/js"
+         :asset-path       "/static/js"
+-        :release          {:asset-path "https://asset.logseq.com/static/js"}
++        :release          {:asset-path "https://asset.logseq.xyz/static/js"}
+         :compiler-options {:infer-externs      :auto
+                            :output-feature-set :es-next-in
+                            :source-map         true
+diff --git a/src/electron/electron/core.cljs b/src/electron/electron/core.cljs
+index c20f6dc3..532de9be 100644
+--- a/src/electron/electron/core.cljs
++++ b/src/electron/electron/core.cljs
+@@ -21,7 +21,7 @@
+ (defonce LSP_SCHEME "lsp")
+ (defonce LSP_PROTOCOL (str LSP_SCHEME "://"))
+ (defonce PLUGIN_URL (str LSP_PROTOCOL "logseq.io/"))
+-(defonce STATIC_URL (str LSP_PROTOCOL "logseq.com/"))
++(defonce STATIC_URL (str LSP_PROTOCOL "logseq.xyz/"))
+ (defonce PLUGINS_ROOT (.join path (.homedir os) ".logseq/plugins"))
+ 
+ (def ROOT_PATH (path/join js/__dirname ".."))
+diff --git a/src/main/frontend/components/onboarding.cljs b/src/main/frontend/components/onboarding.cljs
+index 214e8709..cf98d460 100644
+--- a/src/main/frontend/components/onboarding.cljs
++++ b/src/main/frontend/components/onboarding.cljs
+@@ -174,7 +174,7 @@
+        [:img {:src
+               (if (util/electron?)
+                 (str (config/get-static-path) "img/credits.png")
+-                "https://asset.logseq.com/static/img/credits.png")
++                "https://asset.logseq.xyz/static/img/credits.png")
+               :style {:margin "12px 0 0 0"}}]]]]))
+ 
+ (defn help
+diff --git a/src/main/frontend/components/shortcut.cljs b/src/main/frontend/components/shortcut.cljs
+index 028be880..be74a325 100644
+--- a/src/main/frontend/components/shortcut.cljs
++++ b/src/main/frontend/components/shortcut.cljs
+@@ -133,7 +133,7 @@
+                            :latex "$$E = mc^2$$"
+                            :code (str "`" (t :code) "`")
+                            :pre "```clojure\n  (println \"Hello world!\")\n```"
+-                           :img "![image](https://asset.logseq.com/static/img/logo.png)"}
++                           :img "![image](https://asset.logseq.xyz/static/img/logo.png)"}
+                 :org {:bold (str "*" (t :bold) "*")
+                       :italic (str "/" (t :italics) "/")
+                       :del (str "+" (t :strikethrough) "+")
+@@ -142,7 +142,7 @@
+                       :mark (str "^^" (t :highlight) "^^")
+                       :latex "$$E = mc^2$$"
+                       :code "~Code~"
+-                      :img "[[https://asset.logseq.com/static/img/logo.png][image]]"})
++                      :img "[[https://asset.logseq.xyz/static/img/logo.png][image]]"})
+ 
+           rendered {:italics [:i (t :italics)]
+                     :bold [:b (t :bold)]
+@@ -153,7 +153,7 @@
+                     :code [:code (t :code)]
+                     :pre (highlight/highlight "help-highlight" {:data-lang "clojure"} "(println \"Hello world!\")")
+                     :img [:img {:style {:float "right" :width 32 :height 32}
+-                                :src "https://asset.logseq.com/static/img/logo.png"
++                                :src "https://asset.logseq.xyz/static/img/logo.png"
+                                 :alt "image"}]}]
+ 
+       [:table
+diff --git a/src/main/frontend/components/sidebar.cljs b/src/main/frontend/components/sidebar.cljs
+index 472c7c01..bc28d8d4 100644
+--- a/src/main/frontend/components/sidebar.cljs
++++ b/src/main/frontend/components/sidebar.cljs
+@@ -324,8 +324,6 @@
+          (when-not (mobile-util/is-native-platform?)
+            (widgets/demo-graph-alert))
+ 
+-         (widgets/github-integration-soon-deprecated-alert)
+-
+          (cond
+            (not indexeddb-support?)
+            nil
+diff --git a/src/main/frontend/config.cljs b/src/main/frontend/config.cljs
+index 561aa56f..6580e8d8 100644
+--- a/src/main/frontend/config.cljs
++++ b/src/main/frontend/config.cljs
+@@ -24,15 +24,14 @@
+ (def website
+   (if dev?
+     "http://localhost:3000"
+-    (util/format "https://%s.com" app-name)))
++    "https://logseq.xyz"))
+ 
+ (def api
+   (if dev?
+     "http://localhost:3000/api/v1/"
+     (str website "/api/v1/")))
+ 
+-(def asset-domain (util/format "https://asset.%s.com"
+-                               app-name))
++(def asset-domain "asset.logseq.xyz")
+ 
+ ;; TODO: Remove this, switch to lazy loader
+ (defn asset-uri
+@@ -50,7 +49,7 @@
+ 
+ (goog-define GITHUB_APP_NAME "logseq-test")
+ 
+-(def github-app-name (if dev? GITHUB_APP_NAME "logseq"))
++(def github-app-name (if dev? GITHUB_APP_NAME "logseq-xyz"))
+ 
+ (defn git-pull-secs
+   []
+diff --git a/src/main/frontend/git.cljs b/src/main/frontend/git.cljs
+index 6b26d7bd..505c8bfb 100644
+--- a/src/main/frontend/git.cljs
++++ b/src/main/frontend/git.cljs
+@@ -20,7 +20,7 @@
+      (:cors_proxy (state/get-me)))
+    ;; Not working yet
+    ;; "https://cors-proxy-logseq.vercel.app"
+-   "https://cors.logseq.com"))
++   "https://cors.logseq.xyz"))
+ 
+ (defn set-username-email
+   [dir username email]
