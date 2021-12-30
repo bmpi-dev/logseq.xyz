@@ -163,7 +163,7 @@ index 472c7c01..bc28d8d4 100644
             (not indexeddb-support?)
             nil
 diff --git a/src/main/frontend/config.cljs b/src/main/frontend/config.cljs
-index 561aa56f..6580e8d8 100644
+index 561aa56f..eecd82f6 100644
 --- a/src/main/frontend/config.cljs
 +++ b/src/main/frontend/config.cljs
 @@ -24,15 +24,14 @@
@@ -180,7 +180,7 @@ index 561aa56f..6580e8d8 100644
  
 -(def asset-domain (util/format "https://asset.%s.com"
 -                               app-name))
-+(def asset-domain "asset.logseq.xyz")
++(def asset-domain "https://asset.logseq.xyz")
  
  ;; TODO: Remove this, switch to lazy loader
  (defn asset-uri
