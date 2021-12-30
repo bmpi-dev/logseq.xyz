@@ -130,6 +130,8 @@ Add the following DNS records:
 
 ![](https://img.bmpi.dev/36077899-b535-1a34-0545-afd45d1e9907.png)
 
+**!!DON'T ENABLE Auto Minify!!**
+
 ## Slack
 
 Create two slack channel which is used to receive the notification from logseq.xyz.
