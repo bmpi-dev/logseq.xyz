@@ -1,0 +1,12 @@
+diff --git a/src/main/app/views/home.clj b/src/main/app/views/home.clj
+index 103496a..1b7f186 100644
+--- a/src/main/app/views/home.clj
++++ b/src/main/app/views/home.clj
+@@ -42,6 +42,7 @@
+        "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
+        :name "viewport"}]
+      [:link {:type "text/css", :href css-href, :rel "stylesheet"}]
++     [:link {:type "text/css", :href "https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css", :rel "stylesheet"}]
+      (when-not db-exists?
+        [:style ".videoWrapper {
+   position: relative;

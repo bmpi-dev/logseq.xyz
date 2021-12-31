@@ -9,7 +9,10 @@ Download: https://github.com/bmpi-dev/logseq.xyz/releases/download/backend/logse
 ```
 mkdir logseq
 cd logseq
-wget https://github.com/bmpi-dev/logseq.xyz/releases/download/backend/logseq.jar
+git clone https://github.com/bmpi-dev/deprecated-github-backend
+cd deprecated-github-backend
+git apply logseq.xyz.backend.patch # apply the patch
+lein uberjar # deploy the ./target/logseq.jar to server
 sudo mkdir -p /app/logs/
 sudo chown -R ubuntu:ubuntu /app/logs/
 sudo cp logseq.service /etc/systemd/system/logseq.service
