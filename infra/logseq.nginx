@@ -91,6 +91,6 @@ server {
     server_name cors.logseq.xyz;
 
     location / {
-        proxy_pass http://logseq;
+        proxy_pass http://cors;
     }
 }

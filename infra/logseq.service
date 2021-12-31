@@ -2,8 +2,12 @@
 Description=Logseq backend service
 After=syslog.target network.target
 
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
 [Service]
-SuccessExitStatus=143
+Restart=on-failure
+RestartSec=5s
 
 User=ubuntu
 Group=ubuntu
