@@ -109,10 +109,9 @@ sudo systemctl reload nginx
 
 The backend database is managed by [Supabase](https://supabase.io/).
 
-In Supabase SQL Editor, need create the database and grant the user `postgres` to SUPERUSER permission:
+In Supabase SQL Editor, grant the user `postgres` to SUPERUSER permission:
 
 ```
-create database logseq;
 ALTER USER postgres WITH SUPERUSER;
 ```
 
