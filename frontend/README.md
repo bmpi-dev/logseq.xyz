@@ -4,7 +4,7 @@ https://github.com/bmpi-dev/logseq
 
 ```bash
 cd ~/logseq
-git clone https://github.com/bmpi-dev/logseq
+git clone https://github.com/bmpi-dev/logseq.git
 git apply logseq.xyz.patch # use this patch apply changes
 ```
 
