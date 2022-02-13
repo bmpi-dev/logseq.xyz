@@ -43,6 +43,14 @@ sudo npm i -g @isomorphic-git/cors-proxy
 cors-proxy start -d # port 9999
 ```
 
+```bash
+sudo cp cors-proxy.service /etc/systemd/system/cors-proxy.service
+sudo systemctl daemon-reload
+sudo systemctl enable cors-proxy.service
+sudo systemctl start cors-proxy.service
+sudo systemctl status cors-proxy.service
+```
+
 ### Backend environment
 
 #### JDK

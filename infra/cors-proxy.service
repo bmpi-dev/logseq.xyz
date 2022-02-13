@@ -1,0 +1,23 @@
+[Unit]
+Description=CORS proxy service
+After=syslog.target network.target
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+
+User=ubuntu
+Group=ubuntu
+
+Type=simple
+
+EnvironmentFile=/home/ubuntu/logseq/.env
+WorkingDirectory=/home/ubuntu/logseq
+ExecStart=cors-proxy start
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
